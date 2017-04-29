@@ -13,7 +13,7 @@
 
 ## setup
 - `git clone https://github.com/stevenmathews/amblin.git`
-- `cd amblin && rm .git && git init`
+- `cd amblin && rm -rf .git && git init`
 - make project specific updates to files and directories
 - `rethinkdb` then visit `localhost:8080` to create database and tables
 - `npm run setup`
