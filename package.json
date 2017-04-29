@@ -1,0 +1,51 @@
+{
+  "name": "amblin",
+  "description": "Base for new projects to save time",
+  "author": "Steve Mathews <stevenmathews.nz@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/stevenmathews/amblin/issues"
+  },
+  "homepage": "https://github.com/stevenmathews/amblin#readme",
+  "keywords": [
+    "amblin"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenmathews/amblin.git"
+  },
+  "scripts": {
+    "setup": "npm run setup:ci",
+    "setup:ci": "yarn install && .scripts/npm-x-for-all-packages.sh run yarn-install",
+    "dev": ".scripts/dev-environment.sh",
+    "commit": "git-cz",
+    "test": ".scripts/npm-x-for-all-packages.sh test",
+    "changelog": "node .scripts/update-changelogs.js",
+    "check-release": "node .scripts/check-release.js",
+    "release": ".scripts/release-whatever-needs-release.sh",
+    "perf": "lighthouse https://amblin.now.sh/ && psi 'amblin.now.sh'",
+    "postperf": "rimraf amblin.now.sh*"
+  },
+  "devDependencies": {
+    "add-stream": "^1.0.0",
+    "ava": "^0.19.1",
+    "commitizen": "^2.9.6",
+    "conventional-changelog": "^1.1.0",
+    "cz-customizable": "^5.0.0",
+    "jase": "^1.2.0",
+    "lighthouse": "^1.5.1",
+    "psi": "^3.0.0",
+    "ramda": "^0.23.0",
+    "rethinkdb": "^2.3.3",
+    "rimraf": "^2.6.1",
+    "tempfile": "^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.js"
+    }
+  }
+}
